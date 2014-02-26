@@ -59,12 +59,12 @@ node default {
   include nginx
 
   # fail if FDE is not enabled
-  if $::root_encrypted == 'no' {
-    fail('Please enable full disk encryption and try again')
-  }
+  # if $::root_encrypted == 'no' {
+  #   fail('Please enable full disk encryption and try again')
+  # }
 
   # node versions
-  include nodejs::v0_6
+  # include nodejs::v0_6
   include nodejs::v0_8
   include nodejs::v0_10
 

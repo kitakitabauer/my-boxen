@@ -39,6 +39,11 @@ GITHUBTARBALL
     go (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-hipchat
+  specs:
+    hipchat (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.5.1)
@@ -111,7 +116,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-skype
   specs:
-    skype (1.0.2)
+    skype (1.0.8)
 
 GITHUBTARBALL
   remote: boxen/puppet-sourcetree
@@ -149,6 +154,11 @@ GITHUBTARBALL
     xquartz (1.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-zsh
+  specs:
+    zsh (1.0.0)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.0.0)
@@ -167,6 +177,7 @@ DEPENDENCIES
   gcc (= 2.0.1)
   git (= 1.2.5)
   go (= 1.0.0)
+  hipchat (= 1.1.0)
   homebrew (= 1.5.1)
   hub (= 1.0.3)
   imagemagick (= 1.2.1)
@@ -182,7 +193,7 @@ DEPENDENCIES
   redis (= 3.0.3)
   repository (= 2.2.0)
   ruby (= 6.7.2)
-  skype (= 1.0.2)
+  skype (= 1.0.8)
   sourcetree (= 0.0.2)
   stdlib (= 4.1.0)
   sublime_text_2 (= 1.1.0)
@@ -191,4 +202,5 @@ DEPENDENCIES
   virtualbox (= 1.0.10)
   wget (= 1.0.0)
   xquartz (= 1.1.0)
+  zsh (= 1.0.0)
 

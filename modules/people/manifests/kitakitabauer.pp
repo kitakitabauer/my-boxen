@@ -1,10 +1,16 @@
 class people::kitakitabauer {
   include chrome
+  include iterm2::stable
+  include zsh
+  include sublime_text_2
   include macvim
   include wget
   
   include imagemagick
   include alfred
+
+  include hipchat
+  include skype
   
   # include redis
   
@@ -29,6 +35,7 @@ class people::kitakitabauer {
       'tmux',
       'tig',
       'tree',
+      'z',
     ]:
   }
 

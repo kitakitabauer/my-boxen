@@ -1,7 +1,6 @@
 class people::kitakitabauer {
   include chrome
   include iterm2::stable
-  include zsh
   include sublime_text_2
   include macvim
   include wget
@@ -11,6 +10,7 @@ class people::kitakitabauer {
 
   include hipchat
   include skype
+  include thunderbird
   
   # include redis
   
@@ -22,7 +22,7 @@ class people::kitakitabauer {
   
   git::config::global {
     'user.name':
-      value => 'kitakitabauer' ;
+      value => 'kitakitabauer';
     'user.email':
       value => 'kitakita.d.kitakita@gmail.com'
   }
@@ -32,6 +32,10 @@ class people::kitakitabauer {
   # via homebrew
   package {
     [
+      'gibo',
+      'jq',
+      'python',
+      'source-highlight',
       'tmux',
       'tig',
       'tree',
@@ -45,13 +49,13 @@ class people::kitakitabauer {
       source =>
         "http://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
       provider => pkgdmg;
-    'XtraFinder':
-      source => "http://www.trankynam.com/xtrafinder/downloads/XtraFinder.dmg",
-      provider => pkgdmg;
     'zsh':
       install_options => [
         '--disable-etcdir',
       ];
+    'XtraFinder':
+      source => "http://www.trankynam.com/xtrafinder/downloads/XtraFinder.dmg",
+      provider => pkgdmg;
     'RemoteDesktopConnectionClient':
       source => "http://download.microsoft.com/download/C/F/0/CF0AE39A-3307-4D39-9D50-58E699C91B2F/RDC_2.1.1_ALL.dmg",
       provider => pkgdmg;
@@ -60,6 +64,12 @@ class people::kitakitabauer {
       provider => compressed_app;
     'ClipMenu':
       source => "https://dl.dropbox.com/u/1140644/clipmenu/ClipMenu_0.4.3.dmg",
+      provider => pkgdmg;
+    'Kobito':
+      source => "http://kobito.qiita.com/download/Kobito_v1.2.0.zip",
+      provider => compressed_app;
+    'FlashBuilder':
+      source => "http://download.adobe.com/pub/adobe/flex/mac/FlashBuilder_4_6_LS10.dmg",
       provider => pkgdmg;
   }
 

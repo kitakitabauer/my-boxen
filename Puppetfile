@@ -55,10 +55,9 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-github "osx",           "1.6.0"
+github "osx",           "2.2.2"
 
 github "chrome",        "1.1.2"
-github "zsh",           "1.0.0"
 github "iterm2",        "1.0.2"
 github "macvim",        "1.0.0"
 github "sublime_text_2","1.1.0"
@@ -68,6 +67,8 @@ github "alfred",        "1.1.7"
 github "sourcetree",    "0.0.2"
 github "hipchat",       "1.1.0"
 github "skype",         "1.0.8"
+github "thunderbird",   "1.4.0"
+github "mongodb",       "1.2.0"
 github "redis",         "3.0.3"
 github "virtualbox",    "1.0.10"
 github "vagrant",       "3.0.5"

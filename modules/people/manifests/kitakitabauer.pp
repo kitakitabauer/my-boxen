@@ -2,7 +2,7 @@ class people::kitakitabauer {
   include chrome
   include iterm2::stable
   include sublime_text_2
-  include macvim
+  include macvim_kaoriya
   include wget
   
   include imagemagick
@@ -32,12 +32,15 @@ class people::kitakitabauer {
   # via homebrew
   package {
     [
+      # 'coreutils',
       'gibo',
       'jq',
+      # 'node-inspector',
       'python',
-      'source-highlight',
-      'tmux',
+      # 'source-highlight',
+      # 'the_silver_searcher',
       'tig',
+      'tmux',
       'tree',
       'z',
     ]:
@@ -76,18 +79,30 @@ class people::kitakitabauer {
   # dotfiles setting
   $dotfiles = "${home}/dotfiles"
 
-  repository { $dotfiles:
-    source => 'kitakitabauer/dotfiles',
-    provider => 'git'
+  # repository { $dotfiles:
+  #   source => 'kitakitabauer/dotfiles',
+  #   provider => 'git'
+  # }
+  # exec { "cd ${dotfiles} && git checkout branch && sh ${dotfiles}/setup.sh":
+  #   cwd => $dotfiles,
+  #   require => Repository[$dotfiles],
+  # }
+  # exec { "submodule-clone":
+  #   cwd => $dotfiles,
+  #   command => 'git submodule init && git submodule update',
+  #   require => Repository[$dotfiles],
+  # }
+  # exec { "osx-settings":
+  #   cwd => $dotfiles,
+  #   command => "sh ${dotfiles}/osx -s",
+  #   require => Repository[$dotfiles]
+  # }
+  exec { "nodebrew install":
+    command => "curl -L git.io/nodebrew | perl - setup",
   }
-  exec { "cd ${dotfiles} && git checkout mac && sh ${dotfiles}/setup.sh":
-    cwd => $dotfiles,
-    require => Repository[$dotfiles],
-  }
-  exec { "submodule-clone":
-    cwd => $dotfiles,
-    command => 'git submodule init && git submodule update',
-    require => Repository[$dotfiles],
+  exec { "nodebrew install-binary v0.8.26":
+    command => "${home}/.nodebrew/nodebrew install-binary v0.8.26",
+    unless => ["node -v 2>/dev/null"]
   }
 }
 
@@ -108,7 +123,7 @@ class zsh {
 
 # NodeJS stuff
 class { 'nodejs::global':
-  version => 'v0.10'
+  version => 'v0.8.26'
 }
 
 # class peope::kitakitabauer {
@@ -118,4 +133,10 @@ class { 'nodejs::global':
 
 class { 'ruby::global':
   version => '1.9.3-p448'
+}
+
+include osx::dock::position
+
+class { 'osx::dock::position':
+  position => 'left'
 }
